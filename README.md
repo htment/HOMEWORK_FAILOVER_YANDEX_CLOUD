@@ -15,6 +15,7 @@ exec $SHELL  # Перезагружаем оболочку
 ls -la terraform
 
 ## Если файл есть, устанавливаем его правильно
+
 ```
 sudo install -m 0755 terraform /usr/local/bin/
 ```
@@ -24,7 +25,7 @@ which terraform  # Должно показать /usr/local/bin/terraform
 terraform --version  # Теперь должно работать
 ```
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 
 
@@ -33,11 +34,11 @@ rm -rf .terraform .terraform.lock.hcl  # Удаляем кеш и lock-файл
 terraform init                         # Инициализируем заново
 
 ```
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 дальше скачиваем  authorized_key.json
 
@@ -67,3 +68,25 @@ terraform init
 ```
 
 Команда скачает провайдер и сохранит его в .terraform/providers/.
+
+
+ ## проверяем 
+ ``terraform plan``
+
+![alt text](img/image4.png)
+
+
+Проверяем что создалось
+![alt text](img/image-4.png)
+![alt text](img/image-5.png)
+![alt text](img/image-6.png)
+
+
+проверяем балансировку делаем curl на 80 порт
+
+```curl 51.250.47.224```
+
+![alt text](img/image-7.png)
+
+
+можно заменить ресурс ``yandex_compute_instance`` на ``yandex_compute_instance_group`` и использовать аналогичный подход с балансировщиком.
