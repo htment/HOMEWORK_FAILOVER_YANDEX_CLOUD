@@ -15,6 +15,7 @@ exec $SHELL  # Перезагружаем оболочку
 ls -la terraform
 
 ## Если файл есть, устанавливаем его правильно
+```
 sudo install -m 0755 terraform /usr/local/bin/
 ```
 
