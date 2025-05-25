@@ -69,6 +69,10 @@ terraform init
 
 Команда скачает провайдер и сохранит его в .terraform/providers/.
 
+##
+используем файл конфигурации
+
+https://github.com/htment/HOMEWORK_FAILOVER_YANDEX_CLOUD/blob/main/main.tf
 
  ## проверяем 
  ``terraform plan``
